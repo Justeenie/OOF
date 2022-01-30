@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <style type="text/css">
-            * {
-                margin: 0;
-                padding: 0;
-                border: 0;
-            }
-            .margin{
-                margin: 50% 0;
-                background-color: orange;
-            }
-            .parallax{
-                background: url("website paralex main.gif")
-                repeat fixed 100%;
-                padding: 10% 0 10% 0;
-            }
-        </style>
-    </head>
 
-    <body>
-        <div class="margin"></div>
+<head>
+    <title>OOF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="OOFhome.css" />
+    <link rel="icon" href="favicon.ico">
+</head>
 
-        <section class="parallax">
-            <div class="parallax-inner">
-                <h1>REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</h>
+<body>
+    <!---
+        <div class="header">
+        </div>
+    --->
+
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="PCB Design and Fabrication.html">PCB Design and Fabrication</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='home.html#myproject'">
+                My Project
+            </button>
+            <div class="dropdown-content">
+                <a href="myproject.html#3dprinting">CNC</a>
+                <a href="myproject.html#arduino">PCB Designing</a>
+                <a href="myproject.html#lasercutting">Laser Cutting</a>
+                <a href="webdev.html">Web Development</a>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <div class="margin"></div>
-    </body>
+    <div class="contentbackground">
+        <div class="grid-container">
+
+            <div class="item1">
+                <div class="item1-content">
+                    <img src="" class="decoline1" />
+                    <h1>Further Digital Fabrication</h1>
+                    <img src="" class="decoline2" />
+                    <p>
+                        Welcome! This is my website for the Further Digital Fabrication module. This website documents
+                        everything that I have learnt and done througout the module, as well as the process of me
+                        designing, testing and troubleshooting my project.
+                    </p>
+                    <p>
+                        Right now you are on the homepage where you can use the Quick Navigation bar at the top to get
+                        around, or you could scroll down to look take a look through everything.
+                    </p>
+                    <p>
+                        Here is a little bit more <a href="aboutme.html"><img src="AboutMe.svg">about why I took this module</a> if you are
+                        interested!
+                    </p>
+
+
+
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+</body>
+
 </html>
