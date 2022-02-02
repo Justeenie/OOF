@@ -128,7 +128,8 @@ body {
 	grid-gap: 10px;
 	grid-template-areas:
 		'a'
-        'b';
+        'b'
+		'c';
 	margin: 0 10% 0 10%;
 	padding: 10vh 0 10vh 0;
 	color: #48301c;
@@ -162,10 +163,21 @@ body {
 }
 
 .ispimg{
-    width: 35%;
+    width: 30%;
+	margin-left: 5%;
+	margin-right: 5%;
+	border-radius: 5%;
 }
 
+.item3 {
+    grid-area: c;
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
+.item3-content > h2 {
+    padding-left:10vw;
+    padding-right: 10vw;
+}
 
 
 .grid-container > div{
