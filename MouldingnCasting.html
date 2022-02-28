@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OOF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="mnc.css" />
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="PCB Design and Fabrication.html">PCB Design & Fabrication</a>
+        <a href="MouldingnCasting.html">Moulding & Casting</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='myproject.html'">
+                My Project
+            </button>
+            <div class="dropdown-content">
+                <a href="myproject.html#PCB">PCB and Electronics</a>
+                <a href="myproject.html#Box">Box Fabrication [CNC]</a>
+                <a href="myproject.html#locker">Locker</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="contentbackground">
+        <div class="grid-container">
+
+            <div class="item1">
+                <div class="item1-content">
+
+                    <h1>Moulding and Casting</h1>
+
+                    <img src="mnc.png" class="mncimg">
+                    <p>
+                        The process of moulding and casting is very simple. A mould could be thought of as a cavity or
+                        shell which is made from the imprints
+                        of any given object. The mould could be made out of materials such as moudling sand, rubber,
+                        clay, resin and many more. Once the mould
+                        is made, we then continue on with casting which is basically to add material, usually in liquid
+                        state, into the mould and let it take
+                        the mould's shape and harden before extracting it out. Casting material can range from metals
+                        such as brass to lighter materials such as
+                        plastic and wax.
+                    </p>
+                    <p>
+                        In this modules, we were to make a pre-mould out of foam, then create the mould using silicon,
+                        and finally finish it with adding our material
+                        of choice for casting. In my case, I chose wax as I wanted to make a candle.
+                    </p>
+                </div>
+            </div>
+
+            <div class="item2">
+                <div class="item2-content">
+
+                    <h2>Making the pre-mould</h2>
+
+                    
+
+                    <p>
+                        To make the pre-mould, I need to design a 3D model of the object I want to cast, along with a
+                        shell so that I can make my mould. This pre-mould
+                        would be cut using the CNC machine in the FabLab (stepcraft420V2 currently). If you have not
+                        seen how I operated the machine you could refer to
+                        the <a href="PCB Design and Fabrication.html">PCB Design and Fabrication page of my website</a>
+                        where I showed how I used the CNC machine to create
+                        my own PCB. Using it to create my pre-mould is not too different other than how I generated the
+                        Gcode.
+                    </p>
+                    <p>
+                        In this modules, we were to make a pre-mould out of foam, then create the mould using silicon,
+                        and finally finish it with adding our material
+                        of choice for casting. In my case, I chose wax as I wanted to make a candle.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="premould.png" class="mncimg">
+                    </div>
+                    <p>
+                        The first step for me was to create a 3D model of my pre-mould using Fusion 360. I measured the
+                        piece of foam provided before hand to ensure that
+                        the size of my pre-mould could fit. The height is especially important in this case. As you can
+                        see from above, the heart-shaped candle that I
+                        eventually want to cast is in the centre of the pre-mould, and I have also added a shell around
+                        to create a boundary for the mould.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="setting1.png" class="mncimg4">
+                        <img src="setting2.png" class="mncimg4">
+                        <img src="setting3.png" class="mncimg4">
+                        <img src="setting4.png" class="mncimg4">
+                        <img src="setting5.png" class="mncimg4">
+                    </div>
+                    <p>
+                        Next on the list, I have to tweak the settings for the CNC machine, basically telling it how I
+                        want it to be milled, how detailed it should be and
+                        the fast it should go. I used the settings recommended by the lecturer and changed some to
+                        better suit my design.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="ncgen.png" class="mncimg">
+                    </div>
+                    <p>
+                        With all that done, I just create the nc programme using the STEPCRAFT UCCNC post processing
+                        library and everything is good to go.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <video src="cncpremould.mp4" type="video/mp4" controls class="mncimg">
+                    </div>
+                    <p>
+                        I started the CNC milling machine up and started my programme. At this point, setting the z-axis
+                        zero accurately is not too important and can be done
+                        manually by slowly lowering the drill bit. The important part is to ensure that the drill bite x
+                        and y axis are set to the centre of the foam so that
+                        it does not cut beyond the boundaries of the foam block. With that in mind, the video above
+                        shows what the milling process looked like for my design.
+                    </p>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="item3">
+                <div class="item3-content">
+
+                    <h2>Casting the Silicon Mould</h2>
+
+                    <div class="mncimgdiv">
+                        <img src="twomoulds.jpg" class="mncimg2">
+                        <img src="siliconweighing.jpg" class="mncimg2">
+                    </div>
+                    <p>
+                        Once the milling ends, I took out my pre-moulds and got ready to use silicon to cast my actual
+                        mould. Silicon is great because its flexible and easy
+                        obtain. I was provided with two cans, the first can contains the silicon itself and the second
+                        can contains a hardener. I refered to a datasheet to know
+                        the correct ratio to mix the two. I used a weighing scale to measure weight to ensure my ratio
+                        is as close to the suggested ratio as possible.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="siliconmix.gif" style="text-align: center;" width="40%">
+                    </div>
+                    <p>
+                        I then mixed them for about 5 minutes before pouring them into the foam pre-mould. I ensured not
+                        to stir for too long as it may affect the curing (hardening)
+                        process later. The curing process takes about 1 full day according to the datasheet, but in my
+                        experience, depending on the size of the mould it took up to 2
+                        full days before my moulds were fully cured.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="siliconcast1.jpg" class="mncimg2">
+                        <img src="siliconcast2.jpg" class="mncimg2">
+                    </div>
+                    <p>
+                        I extracted the silicon moulds out of the foam and scraped away as much foam inside as possible
+                        to prevent the foam from disrupting the casting process.
+                    </p>
+
+
+                </div>
+            </div>
+
+            <div class="item4">
+                <div class="item4-content">
+                    <h2>Casting the candle</h2>
+
+                    <div class="mncimgdiv">
+                        <img src="oldcandle.jpg" class="mncimg2">
+                        <img src="aluminiumfoil.jpg" class="mncimg2">
+                    </div>
+                    <p>
+                        I wanted to make candles, therefore I had to find a wax along with finding a way to heat it up.
+                        The decided to use an old unused candle I found, aluminium foil
+                        and a lighter to heat up the wax and some cloth rope as a wick. As you can see from above I wore
+                        a rubber glove to take precaution against the aluminium foil
+                        getting too hot for me to hold.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="candlecast.jpg" class="mncimg">
+                    </div>
+                    <p>
+                        With the wax melted, I poured it into the silicon mould and let it rest to allow the wax to
+                        solidify.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <video src="casting.mp4" type="video/mp4" controls muted class="mncimg">
+                    </div>
+                    <p>
+                        Above is a short video of how I casted the wax.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="candlewithwick.jpg" class="mncimg">
+                    </div>
+                    <p>
+                        As it was cooling down, I placed the wick into the wax to allow it to be used as a candle.
+                    </p>
+
+                    <div class="mncimgdiv">
+                        <img src="candletop.jpg" class="mncimg2">
+                        <img src="candlebottom.jpg" class="mncimg2">
+                    </div>
+                    <p>
+                        Finally, I removed the candle out of the silicon mould and this is how it looked on the top and 
+                        on the bottom. With that, my candle was casted successfully!
+                    </p>
+
+                    <div class="centretext">
+                        <h1>Completed Candle!</h1>
+                    </div>
+
+                    
+                    <div class="mncimgdiv">
+                        <video src="finalcandle.mp4" type="video/mp4"controls muted class="mncimg">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

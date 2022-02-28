@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OOF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="project.css" />
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="PCB Design and Fabrication.html">PCB Design & Fabrication</a>
+        <a href="MouldingnCasting.html">Moulding & Casting</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='myproject.html'">
+                My Project
+            </button>
+            <div class="dropdown-content">
+                <a href="myproject.html#PCB">PCB and Electronics</a>
+                <a href="myproject.html#Box">Box Fabrication [CNC]</a>
+                <a href="myproject.html#locker">Locker</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentbackground">
+        <div class="grid-container">
+
+            <div class="item1">
+                <div class="item1-content">
+
+                    <h1>My Project: ReMediMind</h1>
+
+                    <p>
+                        For my final project, I decided to create an intelligent medicine box that can remind the user
+                        to take their medicine and keep track of whether they took their medication or not. I decided on
+                        this
+                        project due to the fact that it is practical and useful. In Singapore, almost everyone has
+                        someone in their
+                        family who is on long-term medication. It could be due to high blood pressure, diabetes or
+                        cancer. I am no different
+                        and in order to create something that can help my family members, I settled on this idea. This
+                        project
+                        consisted of the following parts:
+                    </p>
+                    <ul>
+                        <li>The box and its dividers</li>
+                        <li>The PCB along with its electronics (servo motors, LCD, buzzer, ect.)</li>
+                        <li>The Locker door opening mechanism</li>
+                    </ul>
+                    <p>
+                        First and foremost, I have to decide how big my overall project is going to be. I took some
+                        measurements
+                        to give myself some guidelines when designing the medicine box. The first consideration is how I
+                        would store the medicine.
+                        Realistically, I could only come up with two options, store the medicine (pills) themselve or
+                        store the container in its
+                        entirety.
+                    </p>
+                    <img src="pills.jpg" class="stdimg">
+                    <p>
+                        Due to medication having many different shapes and sizes I decided to store the medicine
+                        container in its entirety to
+                        accomodate as many different types of medication as possible, even liquid (since they are stored
+                        in bottles). With some
+                        quick measurements of the medicine container my family members use and some searching on the
+                        internet, I decided that a
+                        locker size of the dimensions 70mm x 170mm x 100mm would be sufficient. The LCD that I want to
+                        install on the center of
+                        the box is about 80mm wide due to it requiring a little more space to mount, but I decided to
+                        make the centre 20mm wide
+                        to give myself more space to work with. Now with these guidelines, it was time for me to make a
+                        general sketch of how I
+                        want the ReMediMind to look like.
+                    </p>
+                    <img src="sketch.png" class="stdimg">
+                    <p>
+                        Above is how I planned for the ReMediMind to look like upon completion. Now, I have to plan how
+                        I want to fabricate each part
+                        of my project.
+                    </p>
+                    <ul>
+                        <li>The outer walls of the box should be sturdy and rigid, therefore I decided to use the Large
+                            Format CNC to fabricate it.</li>
+                        <li>The locker doors should be thin AND transparent to allow the User to see their medication
+                            therefor I chose to laser cut clear acrylic.</li>
+                        <li>The dividers for the lockers should be thin but still rigid therefore I would laser cut wood
+                            for that.</li>
+                        <li>
+                            The locker opening mechanism that I planned to use included a rack and pinion along other
+                            things so that would be a mix of laser cutting
+                            and 3D-printing.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item2">
+                <div class="item2-content">
+
+                    <h2>Outer Wall [large format CNC router]</h2>
+                    <img src="box.png" class="stdimg">
+                    <p>
+                        Firstly, I used Fusion 360 to model the outer walls of the medicine box. Since the medicine
+                        box's front will be where the LCD screen, locker doors and buttons are, I only need 5 sides.
+                    </p>
+
+                    <img src="para.png" class="stdimg">
+                    <p>
+                        I ensured that the design was parametric to ensure that I can easily adjust my model according
+                        to the thickness of the wood provided. The reason why there are so many parameters here is to
+                        account for the thickness of the dividers as well as the size of the lockers and tabs for
+                        interlocking joints.
+                    </p>
+                    <img src="cncsoftware.jpg" class="stdimg">
+                    <p>
+                        With the 3D model done, I exported the 2D sketch of each outer wall as a .dxf file and proceeded
+                        to the large format CNC to machine the parts. The other parts you see here on screen belong to
+                        my classmates as we were machining all our parts together. We imported all our .dxf files onto
+                        the VCarve Pro software. There are only a few important settings we have to edit, depth of cut,
+                        specify how we want to cut pockets (if there are any), where we want the tabs to be and last but
+                        not least, fillet type. The importance of the fillet is to ensure that corners are machined
+                        appropriately. This is especially important for interlocking joints as it allows the tabs to be
+                        inserted completely.
+                    </p>
+                    <img src="CNC.gif" class="stdimg">
+                    <p>
+                        To secure the large piece of wood to the router, we used a power tool to help us screw the wood
+                        provided to us to the wood that is already secured onto the router. We then used the controller
+                        to set x and y zero as well as the z stop probe to callibrate the top surface height. Last but
+                        not least, I switched on the vacuum to ensure that the chips from milling flying out is reduced.
+                    </p>
+                    <img src="outerwalls.jpg" class="stdimg">
+                    <p>
+                        Once the CNC machine finished its cutting, I used a chisel and a hammer to get rid of the tabs
+                        still attatching my components to the wooden board. As you can see in the image above, this was
+                        the result. I then filed the rough edges down and also used sandpaper to smoothen out certain
+                        edges. The most important thing for me was to ensure there were no splinters or loose hanging
+                        wood as that may come back to bite me in the future. I then used a rubber mallet to help me
+                        assemble the outerwalls of the box together as it was quite tight fitting. I chose the rubber
+                        mallet to prevent any damage to the surface and made sure to slowly knock/press the pieces into
+                        place.
+                    </p>
+                    <h2>Outer Walls Complete!</h2>
+                    <img src="Frontouterwalls.png" class="std2img">
+                    <img src="backouterwalls.jpg" class="std2img">
+                    <p>
+                        With the outerwalls done, I moved onto laser cutting the other components such as dividers and
+                        doors
+                    </p>
+                </div>
+            </div>
+
+            <div class="item3">
+                <div class="item3-content">
+
+                    <h2>Locker and door </h2>
+
+
+                    <p>
+                        I decided to fabricate the dividers using wood and the doors using acrylic. The very first step
+                        would be to design them using Fusion 360. I decided to continue working on the same file since
+                        my outer walls of the medicine box was already designed there and is parametric. This process
+                        was not linear at all as designing the dividers took several revisions and re-considerations to
+                        lead up to this point. The redesigns could be summerised as such:
+                    </p>
+                    <ul>
+                        <li>Rectangular holes were added at the top to allow the fitting of a servo motor</li>
+                        <li>3 Holes added to accomodate hinges</li>
+                        <li>Holes for servo motors were moved down to a specific height to allow the mounting of a gear
+                            and the fitting of a rack below</li>
+                    </ul>
+
+                    <p>
+                        The reason why there were these new criterias for the design was due to it clashing with the
+                        design of the door opening mechanism or needed more space to fit the hinge or fit the given hole
+                        for the locker door.
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
