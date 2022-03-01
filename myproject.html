@@ -19,8 +19,8 @@
             </button>
             <div class="dropdown-content">
                 <a href="myproject.html#PCB">PCB and Electronics</a>
-                <a href="myproject.html#Box">Box Fabrication [CNC]</a>
-                <a href="myproject.html#locker">Locker</a>
+                <a href="myproject.html#box">Box Fabrication [CNC]</a>
+                <a href="myproject.html#locker">Locker system</a>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
                             therefor I chose to laser cut clear acrylic.</li>
                         <li>The dividers for the lockers should be thin but still rigid therefore I would laser cut wood
                             for that.</li>
-                        <li>
+                        <li id="box">
                             The locker opening mechanism that I planned to use included a rack and pinion along other
                             things so that would be a mix of laser cutting
                             and 3D-printing.
@@ -146,7 +146,7 @@
                     <h2>Outer Walls Complete!</h2>
                     <img src="Frontouterwalls.png" class="std2img">
                     <img src="backouterwalls.jpg" class="std2img">
-                    <p>
+                    <p id="locker">
                         With the outerwalls done, I moved onto laser cutting the other components such as dividers and
                         doors
                     </p>
@@ -175,9 +175,86 @@
 
                     <p>
                         The reason why there were these new criterias for the design was due to it clashing with the
-                        design of the door opening mechanism or needed more space to fit the hinge or fit the given hole
-                        for the locker door.
+                        design of the door opening mechanism or needing more space to fit the hinge or fit the given
+                        hole for the locker door.
                     </p>
+
+                    <h2>3D model of dividers</h2>
+
+                    <img src="dividers.png" class="stdimg">
+
+                    <h2>Laser cutting process</h2>
+
+                    <video src="lasercutting.mp4" type="video/mp4" controls muted class="stdimg"></video>
+
+                    <h2>3D-printed hinges</h2>
+                    <img src="hinge.jpg" class="stdimg">
+                    <p>
+                        I needed hinges for my doors which fortunately enough, I found a model of a parametrically
+                        designed hinge posted by a user on <a
+                            href="https://www.thingiverse.com/thing:2187167">Thingverse</a> and edited it to fit my
+                        application. I then 3D-printed the hinge using the available Ultimakers in the FabLab. My
+                        biggest advice for 3D-printing this hinge is to set the wall expansion to -0.2 in the Cura
+                        slicer to prevent the hinge merging into one piece.
+                    </p>
+
+                    <h2>3D model of door</h2>
+                    <img src="door.png" class="stdimg">
+                    <p>
+                        Making the door was a little tedious as I had to make minor adjustments here and there to the 3D
+                        model to ensure that the door could fit properly. This led to me needing to re-cut the model
+                        several times on the laser cutter.
+                    </p>
+
+                    <img src="doorfinal.png" class="stdimg">
+                    <p>
+                        As mentioned earlier, I chose clear acrylic for the door to allow the User to see their
+                        medication. The 3 holes on the door allow me to mount the hindge onto it and the rectangular gap
+                        on the side is to fit the hinge through.
+                    </p>
+
+                    <h2>Door opening mechanism</h2>
+
+                    <img src="openersketch.png" class="stdimg">
+                    <p>
+                        For the door opening mechanism, I wanted to try a more challenging method for fun, therefore I
+                        decided on a rack and pinion design to open and close the door. Above is a rough sketch of what
+                        I had in mind when designing this.
+                    </p>
+
+                    <img src="rack.png" class="std2img">
+                    <img src="pinion.png" class="std2img">
+                    <p>
+                        I used Autodesk Inventor's "Generate Spur Gear" function to easily obtain the gear design
+                        without needing to do it manually. For the rack, I looked up a datasheet to get the correct
+                        dimesions for it. As you can see everything is slowly coming together and I can almost start the
+                        assembly for the locker system
+                    </p>
+
+                    <img src="openerhinge.png" class="stdimg">
+                    <p>
+                        As you can see further above, the rack I designed has a long slot at the front, This was to
+                        allow me to fix in a movable hinge that could slide along the rack in case the rack
+                        over-extends. This was a neccessary precaution as the whole system may buckle or break if no
+                        tolerance is given. This little hinge took many attempts for it to work perfectly as intended
+                        due to needing to increase/decrease the size or spacing between this joint and the rack.
+                        Consequently, this resulted in me needing to re-print the component several times. Fortunately
+                        for me, it is small and I did not require that much infill therefore the printing time is below
+                        20mins.
+                    </p>
+                    <img src="racktrack.png" class="stdimg">
+                    <p>
+                        Last but not least, I have to create a "track" for the rack to ensure it doesnt move out of its
+                        intended direction and to secure the rack firmly against the pinion so that they always "bite".
+                    </p>
+
+                    <h2><u>Assembly of locker system</u></h2>
+                    <h3>Inside locker</h3>
+                    <img src="insidelocker.jpg" class="std2img">
+                    <img src="insidelocker2.jpg" class="std2img">
+                    <h3>Outside locker</h3>
+                    <img src="outsidelocker.jpg" class="std2img">
+                    <img src="outsidelocker2.jpg" class="std2img">
                 </div>
             </div>
 
