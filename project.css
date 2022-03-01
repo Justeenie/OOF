@@ -167,9 +167,6 @@ body {
 }
 
 
-.mncimgdiv {
-    text-align: center;
-}
 
 .std2img{
     width: 35%;
@@ -179,10 +176,6 @@ body {
 
 }
 
-.mncimg4{
-    width: 15%;
-    border-radius: 5%;
-}
 
 .item3 {
     grid-area: c;
@@ -202,9 +195,11 @@ body {
 	padding-bottom: 20vh;
 }
 
-.item4-content > h2 {
-    padding-left:10vw;
-    padding-right: 10vw;
+.tallimg {
+    border-radius: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .centretext{

@@ -18,9 +18,9 @@
                 My Project
             </button>
             <div class="dropdown-content">
-                <a href="myproject.html#PCB">PCB and Electronics</a>
                 <a href="myproject.html#box">Box Fabrication [CNC]</a>
                 <a href="myproject.html#locker">Locker system</a>
+                <a href="myproject.html#PCB">PCB and Electronics</a>
             </div>
         </div>
     </div>
@@ -258,6 +258,162 @@
                 </div>
             </div>
 
+            <div class="item4" id="PCB">
+                <div class="item4-content">
+                    <h2>PCB and Electronics</h2>
+                    <img src="attiny3216.png" class="stdimg">
+                    <p>
+                        Firstly, I had to design the PCB schematic within EAGLE. The schematic is <b>not</b> how the
+                        electronic components would be physically arranged, it merely shows how they should be
+                        connected. Also, huge thanks to my lecturer Mr Steven Chew and my classmate Zi Hon for helping
+                        me out so much for this part of the project. I have learnt so much more about PCB designing and
+                        fabrication thanks to them. The very first decision I had to make was to select a chip. I went
+                        with the ATtiny3216 due to the fact that it had enough IO pins, PWM pins and it could use the
+                        I2C protocol since it had SCL and SDA pins.
+                    </p>
+                    <img src="charlieplex.png" class="stdimg">
+                    <p>
+                        A large issue I had at first was the shear amount of buttons and LEDs I wanted to have in my
+                        project. This caused me to require an obscene amount of IO pins if I were to wire each
+                        electronic component to its own pin. This issue was promptly solved by my lecturer who advised
+                        me to use charlieplexing to connect my LEDs. The 8 LEDs I wanted to connect only required 4 IO
+                        pins with this method. Basically, I connect the LEDs between two IO pins in unique directions as
+                        you can see in the image above. Since LEDs only work with current flowing the correct way, I am
+                        able to use code to control which pins are HIGH and which pins are LOW. Since the speed of these
+                        instructions extecuting is so quick, it looks as if certain LEDs are switched on simultaneously.
+                    </p>
+                    <img src="dcsupply.png" class="stdimg">
+                    <p>
+                        I decided to use an external power supply. Due to having 4 servo motors connected, and servo
+                        motors being notorious for introducing a lot of noise into the power supply rails, I added two
+                        capacitors to help reduce it. One 10microfarad, the other 100nanofarad.
+                    </p>
+                    <img src="fry.jpg" class="stdimg">
+                    <p>
+                        The other reason I used an external power supply is that I did not want to risk frying my
+                        microchip. That is just sad.
+                    </p>
+                    <img src="analogreadbutton.png" class="tallimg">
+                    <p>
+                        I also figured out a way to greatly reduce the amount of IO pins for the buttons, I used the
+                        connection that you can see above to give each button a different resistence when the button is
+                        pressed. I then programme the chip to read the analog value. This basically assigned every
+                        button a unique range of values which the chip can be programmed to recognise. (side note, in
+                        the future I had to reduce the resistor values to about 500 ohms each as 1k ohms was so high
+                        that the buttons at the back could not be detected accurately)
+                    </p>
+                    <img src="pcbscheme.png" class="stdimg">
+                    <p>
+                        This is the completed schematic of my PCB design. The other components I added were an LCD
+                        screen (was OLED at first but I changed it later), a buzzer, several servo motors and the
+                        pinouts for the UPDI programmer.
+                    </p>
+                    <img src="pcbboarddesign.png" class="stdimg">
+                    <p>
+                        With the help of Zi Hon and Mr Chew, this is the final layout of the board, I ensured that the
+                        traces were as big as possible to decrease the chance that the drillbit rips out the traces or
+                        the traces becomes too thin for soldering. Also, the green pads you see above will have
+                        through-holes at the center to allow solering of the pinouts.
+                    </p>
+                    <img src="ReMediMind traces v2.png" class="std2img">
+                    <img src="ReMediMind CNC holes.png" class="std2img">
+                    <p>
+                        I then used mods to get the gcode for the through-holes and the traces. This PCB was quite big
+                        therefore I had to use a bigger copper clad than normal.
+                    </p>
+                    <video src="pcb.mp4" type="video/mp4" controls muted class="stdimg"></video>
+                    <p>
+                        Milling this PCB was exceptionally hard due to the fact that during this point of the module,
+                        many PCBs have already been milled and the board underneath supporting the PCBs during milling
+                        is no longer leveled and completely flat. Added on with the fact that most bits were worn down
+                        and that the board I was milling was larger in size, the height of the board varied
+                        significantly from edge to edge (about +0.05mm which is big enough for the v-bit to completely
+                        not cut the pcb due to this process being very high-precision). The way I dealt with this issue
+                        was to level the v-bit manually by stepping it down slowly and using a piece of paper underneath
+                        to check when the v-bit barely touching the surface. I would then start the process of milling
+                        and "micro-manage" the operation, everytime the bit goes too low or too high(cutting too deep or
+                        not cutting at all), I would stop the cycle, adjust the z-height accordingly by 0.01mm at a
+                        time, roll back to gcode to a few lines before the issues occured and continue the cycle.
+                        Through this process I managed to get what I would consider a very well-fabricated board given
+                        the issues I faced.
+                    </p>
+
+                    <img src="pcbfail.jpg" class="stdimg">
+
+                    <p>
+                        Next up was soldering, which I unfortunately did not have much/any experience with at that point
+                        (other than the ISP programmer). This caused my hands to be very shakey (they still are but now
+                        I
+                        can manage soldering better), and soldering was an uphill climb. I started by soldering the
+                        microchip first.
+                    </p>
+
+                    <img src="rage.gif" class="std2img">
+                    <img src="pcbfail.jpg" class="std2img">
+                    <p>
+                        Of course, shortly after starting the soldering process I broke a leg off the microchip and
+                        ripped out traces from the PCB.
+                    </p>
+                    <img src="pepepistol.png" class="std2img">
+                    <img src="pcbfail.jpg" class="std2img">
+                    <p>
+                        This obviously meant that I had to mill another PCB from scratch and restart the process.
+                        Looking back at it, if I met with this situation now, I would attempted to use wires to repair
+                        the broken traces but back then I did not think of that. Welp, guess I am improving at least.
+                    </p>
+                    <h3><b><u>Warning: The image(s) shown below are a health hazard.</u></b></h3>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img src="massacre.jpg" class="stdimg">
+                    <p>
+                        So this section will be long. I want to explain how what seems to be a PCB massacre, occured.
+                        Did I run through a fire? Did I fall down the stairs with the PCB? Did I solder this between
+                        Kyiv and Belarus? I have learnt many many... many things from soldering this board.
+                    </p>
+
+                    <img src="ragegun.gif" class="std2img">
+                    <img src="rip.png" class="std2img">
+                    <p>
+                        Firstly,
+                        through holes are not a very good idea for pinouts, This is due to the pads being easily ripped
+                        out when attactching jumper wires to the pins. In the future, I would only use through-holes for
+                        static components such as diode, resistors, capacitors, ect. Pinouts however, will be surface
+                        mounted instead to prevent the pins from going all the way through the hole and ripping out
+                        traces and solder.
+                    </p>
+                    <img src="peperage.jpg" class="std2img">
+                    <img src="dead.png" class="std2img">
+                    <p>
+                        Secondly, I will try my best to get rid of as much dead copper as possible
+                        next time but <b>ONLY</b> those near the microchip. This is due to the fact that it prevents the
+                        solder from shorting the microchip's legs to the dead copper. Once, it is connected to the
+                        copper between the microchips legs, it is hard to unsolder it since there is very little space
+                        to work with.
+                    </p>
+                    <img src="wire1.png" class="std2img">
+                    <img src="wire2.png" class="std2img">
+                    <p>
+                        Last but not least, I have also learnt the <del>art</del> of using wires to
+                        repair/replace broken traces. This has been a life-saver. I am very grateful for Mr Yeo GS for
+                        teaching me this and demostrating it to me, my PCB would not be complete if it weren't for his
+                        help.
+                        <br>
+                        <br>
+                        This concludes the PCB fabrication part of my final project, to be honest this was indeed the
+                        toughest part of the whole project for me and I have completely lost track on the hours I have
+                        spent in the FabLab working on this board. But I do not regret it as I really have learnt a lot
+                        through this process and I would not have learnt so much if not for pressing forward.
+                    </p>
+
+                </div>
+            </div>
 
 
         </div>
